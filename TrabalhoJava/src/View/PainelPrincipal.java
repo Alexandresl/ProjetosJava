@@ -29,15 +29,17 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         jdp = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menu_arquivo = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        menu_alunos = new javax.swing.JMenu();
+        menu_gerenciar_aluno = new javax.swing.JMenuItem();
+        menu_professores = new javax.swing.JMenu();
+        menu_propostas = new javax.swing.JMenu();
+        menu_bancas = new javax.swing.JMenu();
+        menu_informacao = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Gerenciamento dos TC do Curso SSI");
 
         jdp.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -52,8 +54,8 @@ public class PainelPrincipal extends javax.swing.JFrame {
             .addGap(0, 454, Short.MAX_VALUE)
         );
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/page.png"))); // NOI18N
-        jMenu1.setText("Arquivo");
+        menu_arquivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/page.png"))); // NOI18N
+        menu_arquivo.setText("Arquivo");
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/door_in.png"))); // NOI18N
         jMenuItem1.setText("Sair");
@@ -62,39 +64,44 @@ public class PainelPrincipal extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        menu_arquivo.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menu_arquivo);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/user.png"))); // NOI18N
-        jMenu2.setText("Alunos");
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+        menu_alunos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/user.png"))); // NOI18N
+        menu_alunos.setText("Alunos");
+        menu_alunos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
+                menu_alunosActionPerformed(evt);
             }
         });
 
-        jMenuItem2.setText("Cadastrar");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        menu_gerenciar_aluno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/table_edit.png"))); // NOI18N
+        menu_gerenciar_aluno.setText("Gerenciar");
+        menu_gerenciar_aluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                menu_gerenciar_alunoActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        menu_alunos.add(menu_gerenciar_aluno);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(menu_alunos);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/book_open.png"))); // NOI18N
-        jMenu3.setText("Professores");
-        jMenuBar1.add(jMenu3);
+        menu_professores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/book_open.png"))); // NOI18N
+        menu_professores.setText("Professores");
+        jMenuBar1.add(menu_professores);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/table.png"))); // NOI18N
-        jMenu4.setText("Propostas");
-        jMenuBar1.add(jMenu4);
+        menu_propostas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/table.png"))); // NOI18N
+        menu_propostas.setText("Propostas");
+        jMenuBar1.add(menu_propostas);
 
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/group.png"))); // NOI18N
-        jMenu5.setText("Bancas");
-        jMenuBar1.add(jMenu5);
+        menu_bancas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/group.png"))); // NOI18N
+        menu_bancas.setText("Bancas");
+        jMenuBar1.add(menu_bancas);
+
+        menu_informacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/information.png"))); // NOI18N
+        menu_informacao.setText("Informações");
+        jMenuBar1.add(menu_informacao);
 
         setJMenuBar(jMenuBar1);
 
@@ -110,21 +117,26 @@ public class PainelPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+    private void menu_alunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_alunosActionPerformed
         
-    }//GEN-LAST:event_jMenu2ActionPerformed
+    }//GEN-LAST:event_menu_alunosActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    /**
+     * Método que captura ação do botão de gerenciar aluno
+     */
+    private void menu_gerenciar_alunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_gerenciar_alunoActionPerformed
         CadAluno telaAluno = new CadAluno();
         jdp.add(telaAluno);
         telaAluno.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+        telaAluno.setPosicao();
+    }//GEN-LAST:event_menu_gerenciar_alunoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,14 +174,15 @@ public class PainelPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JDesktopPane jdp;
+    private javax.swing.JMenu menu_alunos;
+    private javax.swing.JMenu menu_arquivo;
+    private javax.swing.JMenu menu_bancas;
+    private javax.swing.JMenuItem menu_gerenciar_aluno;
+    private javax.swing.JMenu menu_informacao;
+    private javax.swing.JMenu menu_professores;
+    private javax.swing.JMenu menu_propostas;
     // End of variables declaration//GEN-END:variables
 }
